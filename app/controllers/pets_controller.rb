@@ -7,12 +7,12 @@ class PetsController < ApplicationController
 
   get '/pets/new' do
     @owners=Owner.all
-    binding.pry
+    #binding.pry
     erb :'/pets/new'
   end
 
   post '/pets' do
-    binding.pry
+    #binding.pry
     @pet=Pet.create(params[:pet])
 
     @pet.owner=Owner.create(name: params["owner_name"]) if !params["owner_name"].empty?
