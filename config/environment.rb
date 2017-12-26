@@ -14,4 +14,3 @@ configure :development do
   set :database, 'sqlite3:db/owners.db'
   set :database, 'sqlite3:db/pets.db'
 end
-
