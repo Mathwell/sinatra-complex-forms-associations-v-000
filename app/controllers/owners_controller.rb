@@ -2,12 +2,13 @@ class OwnersController < ApplicationController
 
   get '/owners' do
     @owners = Owner.all
+    binding.pry
     erb :'/owners/index'
   end
 
   get '/owners/new' do
     @pets=Pet.all
-    binding.pry
+    #binding.pry
     erb :'/owners/new'
   end
 
