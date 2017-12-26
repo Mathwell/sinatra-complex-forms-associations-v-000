@@ -2,7 +2,7 @@ class OwnersController < ApplicationController
 
   get '/owners' do
     @owners = Owner.all
-    binding.pry
+    #binding.pry
     erb :'/owners/index'
   end
 
@@ -13,6 +13,7 @@ class OwnersController < ApplicationController
   end
 
   post '/owners' do
+    binding.pry
 
   end
 
