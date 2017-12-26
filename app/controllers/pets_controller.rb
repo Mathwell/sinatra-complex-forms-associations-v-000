@@ -7,12 +7,12 @@ class PetsController < ApplicationController
 
   get '/pets/new' do
     @owners=Owner.all
-    binding.pry
+    #binding.pry
     erb :'/pets/new'
   end
 
   post '/pets' do
-    binding.pry
+    #binding.pry
     #puts params
     @pet=Pet.create(params[:pet])
     @pet.owner=Owner.find(:owner)
