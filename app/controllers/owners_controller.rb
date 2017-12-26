@@ -32,6 +32,9 @@ class OwnersController < ApplicationController
   end
 
   post '/owners/:id' do
+    @owner.update(params["owner"])
+    @owner.pets<<Pet.create(name: params["pet"]["name"]) if !params["pet"]["name"].empty?
+    redirect to "owners/#{@owner.id}"
 
   end
 end
