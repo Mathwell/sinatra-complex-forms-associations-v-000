@@ -15,7 +15,8 @@ class OwnersController < ApplicationController
   post '/owners' do
     #binding.pry
     @owner=Owner.create(params[:owner])
-    @owner.pets<<Pet.create(name: params["pet"]["name"])
+    @owner.pets<<Pet.create(name: params["pet"]["name"]) if !params["pet"]["name"].empty?
+    @owner.save
     redirect "owners/#{@owner.id}"
 
   end
