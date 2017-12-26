@@ -9,3 +9,12 @@ ActiveRecord::Base.establish_connection(
 )
 
 require_all 'app'
+
+configure :development do
+  set :database, 'sqlite3:db/owners.db'
+end
+
+configure :development do
+  set :database, 'sqlite3:db/pets.db'
+end
+
