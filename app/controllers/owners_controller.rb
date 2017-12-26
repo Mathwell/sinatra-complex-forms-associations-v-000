@@ -15,6 +15,7 @@ class OwnersController < ApplicationController
   post '/owners' do
     #binding.pry
     @owner=Owner.create(params[:owner])
+    @owner.pets<<Pet.create(name: params["pet"]["name"])
     redirect "owners/#{@owner.id}"
 
   end
